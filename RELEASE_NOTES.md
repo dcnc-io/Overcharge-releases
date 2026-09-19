@@ -1,21 +1,22 @@
-# Overcharge AGENT 0.1.0-connector.9 · Public beta
+# Overcharge AGENT 0.1.0-connector.11 · Public beta
 
-First public Windows x64 release with **installer and portable EXE**.
+Windows x64 installer and portable EXE from the same immutable source. Includes the Figma overlay and integrated desktop follow-up; the earlier connector.10 artifact was a local candidate, not a public release.
 
-- Game preparation: process status, connection setup, explicit launch and separate game-update status.
-- Heroes, Builds and Matches open the production website in the default browser.
-- Version display and manual update link.
-- Existing Overcharge icon, shared Io 0.4.1 and existing Ranked/GSI functionality retained.
-- Per-user installer configured without elevation, with a Start menu shortcut and preservation of user data.
+- One Astro-compatible header for native Play and sandboxed Heroes, Matches, Meta, Pros, Builds and library/settings web content.
+- PLAY OVERCHARGED waiting screen: Io explicitly waits for a new match signal. Dota launch remains an explicit user action. Positive process detection opens the waiting view without relaunching the game.
+- Fresh authenticated match phases transition into the native draft overlay and hide tabs. Show tabs / Esc restores navigation. Stale input stays labeled and does not invent a game exit.
+- Manual draft planning, item paths, local team notes and source-linked historical purchase examples. Design examples are labeled; no claim of complete live Ranked draft coverage.
+- One Io 0.4.1 renderer. Web content has no native preload or Node access. Offline and connection recovery remain available locally.
+- Same app identity and user-data directory; per-user NSIS installer without elevation, Start menu shortcut, data-preserving removal configuration. Manual updates only.
 
 ## Verification and limitations
 
-Both files are **unsigned** (Authenticode `NotSigned`). SHA-256 and byte size are provided in `release.json` and `SHA256SUMS`.
+Both files are **unsigned**, Authenticode **NotSigned**. Byte sizes, SHA-256 and private source commit are recorded in release.json and SHA256SUMS. Public tag history is distinct from private source history.
 
-Source checks: 95 JavaScript files; 230 product tests (229 passed, 1 existing skip), scene/tuning checks, and 15 release-tool tests passed.
+Source: 111 JavaScript syntax checks; 244 product tests passed (1 existing skip); scene/tuning checks; 15 release tests passed. Web integration: 355 tests passed (1 existing skip), Astro check and full production build. Browser inspection covered pending, synthetic match focus, stale/exit, search/profile, embedded navigation and minimum window geometry.
 
-**Actual execution is not verified for this release.** Windows App Control blocked the unsigned candidate on the validation PC. Installation, upgrades, uninstall behavior, packaged browser launch and live Dota reception remain unverified. Publishing with this explicit limitation was approved. No security protection was disabled.
+Hidden Linux Electron source checks: overlay 8/8, integrated shell 9/9, deployed WebContentsView 12/12 (including denied-network recovery). Synthetic authenticated GSI, capture and lifecycle checks passed. **The strict full graphical smoke did not pass because this host blocklists WebGL2.** Functional fallback receipts do not certify GPU rendering in the Windows package.
 
-SmartScreen or other endpoint policies may warn or prevent execution. Keep security protections enabled. This beta does not promise complete Ranked picks/bans or all ten players' lineups; missing inputs remain unknown. Local capture is optional and starts off. Do not publish private capture files or GSI credentials.
+**Windows execution testing remains incomplete.** App Control blocked an unsigned executable on the validation PC; publishing with this limitation was explicitly authorized. The final Windows EXEs have not completed installation/reinstallation/update/removal, visible runtime, real Dota or Bot Pick tests. Do not disable security protections. SmartScreen or other policies may warn or prevent execution.
 
-Download the setup EXE for normal installation, or portable EXE for installation-free use. Updates are manual via [the download page](https://overcharge.io/download/).
+Download the setup EXE for normal installation or the portable EXE for installation-free use. Updates are manual via [the download page](https://overcharge.io/download/). Existing connector.9 remains available under its original versioned release.

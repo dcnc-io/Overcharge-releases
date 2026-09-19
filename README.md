@@ -6,11 +6,11 @@ This repository contains release metadata, documentation and downloadable binari
 
 ## Current beta
 
-**0.1.0-connector.9 · Windows x64 · Unsigned**
+**0.1.0-connector.11 · Windows x64 · Unsigned**
 
 - Installer: installs for the current Windows user and creates a Start menu shortcut.
 - Portable: runs without installation.
-- The Agent handles local Dota preparation and GSI connection. Heroes, Builds and Matches open Overcharge.io in the default browser.
+- Play hosts the local connection, waiting screen and draft overlay. Heroes, Builds, Matches, Meta and Pros open the live website inside a shared desktop header. A fresh match signal hides the tabs; Show tabs restores navigation.
 - Updates are manual through the download page.
 
 **Execution testing is incomplete.** Windows App Control blocked the unsigned executable on our validation machine. Source tests, package construction and Authenticode/hash inspection passed; this build's Windows execution, install/upgrade/uninstall lifecycle and live-game reception are unverified. Do not disable your device's security protections. Unknown-publisher warnings and policy-based blocks may occur.

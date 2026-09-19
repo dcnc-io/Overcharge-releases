@@ -8,7 +8,7 @@ Windows x64용 설치형과 포터블을 같은 소스 및 Io 0.4.1로 제공합
 2. 앱에서 Dota 상태를 확인합니다. 연결 설정의 Install / repair connection을 직접 선택합니다. Dota를 찾지 못하면 Choose Dota folder에서 설치 폴더를 선택합니다.
 3. Dota가 닫혀 있다고 확인된 경우에만 Launch Dota 2가 실행 요청을 보냅니다. 이미 열린 게임은 종료하거나 다시 실행하지 않습니다. 필요한 경우 사용자가 편한 시점에 종료하고 앱의 실행 버튼을 사용합니다.
 4. 수신기가 Listening이어도 실제 게임 데이터가 도착한 것은 아닙니다. 수신·오래된 데이터·알 수 없는 draft 필드를 구분합니다. Ranked 전체 픽/밴 및 양 팀 전체 라인업을 보장하지 않습니다.
-5. Heroes / Builds / Matches는 기본 브라우저의 운영 웹으로 열립니다. 인터넷이 없어도 로컬 앱과 연결 상태 화면은 사용할 수 있습니다. 기존 로컬 기록은 Diagnostics and existing local records에서 확인합니다.
+5. Dota 실행 요청 또는 프로세스 감지 후 Play의 PLAY OVERCHARGED 화면으로 전환합니다. Io is waiting for a new match signal은 새 매치 데이터를 기다린다는 뜻입니다. 새 매치 신호가 수신되면 탭을 접고 로컬 드래프트 화면을 표시합니다. Show tabs 또는 Esc로 탐색을 복구할 수 있습니다. Heroes / Builds / Matches / Meta / Pros는 앱 안의 웹 탭으로 열립니다. 인터넷이 없어도 로컬 Play와 연결 설정은 사용할 수 있습니다. 기존 기록은 프로필의 Existing local records 또는 진단 메뉴에서 확인합니다.
 6. Check for updates는 다운로드 페이지를 엽니다. 자동 다운로드/자동 설치는 없습니다. 앱을 닫고 새 설치형을 실행하거나 포터블 파일을 교체합니다. 설치형 업데이트와 제거는 기존 사용자 데이터를 지우지 않습니다.
 
 공개 자료에는 SHA-256, 버전, 배포 종류, 서명 상태와 소스 커밋을 기록합니다. 체크섬은 파일 동일성을 확인하며 게시자 서명을 대신하지 않습니다. GSI 토큰과 개인 캡처는 공개하지 않습니다.
