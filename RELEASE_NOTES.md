@@ -1,6 +1,6 @@
-# Overcharge AGENT 0.1.0-connector.11 · Public beta
+# Overcharge AGENT 0.1.0-connector.12 · Public beta
 
-Windows x64 installer and portable EXE from the same immutable source. Includes the Figma overlay and integrated desktop follow-up; the earlier connector.10 artifact was a local candidate, not a public release.
+Windows x64 installer and portable EXE from the same immutable source. Includes the Figma overlay and integrated desktop follow-up; connector.10 remained a local candidate. Connector.11 was withdrawn to draft before website activation after an actual window-close test found a detached WebContents cleanup issue. Connector.12 fixes and verifies that exit path.
 
 - One Astro-compatible header for native Play and sandboxed Heroes, Matches, Meta, Pros, Builds and library/settings web content.
 - PLAY OVERCHARGED waiting screen: Io explicitly waits for a new match signal. Dota launch remains an explicit user action. Positive process detection opens the waiting view without relaunching the game.
@@ -13,9 +13,9 @@ Windows x64 installer and portable EXE from the same immutable source. Includes 
 
 Both files are **unsigned**, Authenticode **NotSigned**. Byte sizes, SHA-256 and private source commit are recorded in release.json and SHA256SUMS. Public tag history is distinct from private source history.
 
-Source: 111 JavaScript syntax checks; 244 product tests passed (1 existing skip); scene/tuning checks; 15 release tests passed. Web integration: 355 tests passed (1 existing skip), Astro check and full production build. Browser inspection covered pending, synthetic match focus, stale/exit, search/profile, embedded navigation and minimum window geometry.
+Source: 111 JavaScript syntax checks; 245 product tests passed (1 existing skip); scene/tuning checks; 15 release tests passed. Web integration: 355 tests passed (1 existing skip), Astro check and full production build. Browser inspection covered pending, synthetic match focus, stale/exit, search/profile, embedded navigation and minimum window geometry.
 
-Hidden Linux Electron source checks: overlay 8/8, integrated shell 9/9, deployed WebContentsView 12/12 (including denied-network recovery). Synthetic authenticated GSI, capture and lifecycle checks passed. **The strict full graphical smoke did not pass because this host blocklists WebGL2.** Functional fallback receipts do not certify GPU rendering in the Windows package.
+Hidden Linux Electron source checks: overlay 8/8, integrated shell 11/11, deployed WebContentsView 13/13 (including denied-network recovery). Synthetic authenticated GSI, capture and lifecycle checks passed. **The strict full graphical smoke did not pass because this host blocklists WebGL2.** Functional fallback receipts do not certify GPU rendering in the Windows package.
 
 **Windows execution testing remains incomplete.** App Control blocked an unsigned executable on the validation PC; publishing with this limitation was explicitly authorized. The final Windows EXEs have not completed installation/reinstallation/update/removal, visible runtime, real Dota or Bot Pick tests. Do not disable security protections. SmartScreen or other policies may warn or prevent execution.
 

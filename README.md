@@ -6,7 +6,7 @@ This repository contains release metadata, documentation and downloadable binari
 
 ## Current beta
 
-**0.1.0-connector.11 · Windows x64 · Unsigned**
+**0.1.0-connector.12 · Windows x64 · Unsigned**
 
 - Installer: installs for the current Windows user and creates a Start menu shortcut.
 - Portable: runs without installation.

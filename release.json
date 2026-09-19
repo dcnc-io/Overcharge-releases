@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
   "status": "available",
-  "version": "0.1.0-connector.11",
+  "version": "0.1.0-connector.12",
   "channel": "beta",
-  "publishedAt": "2026-09-19T20:33:04.254Z",
+  "publishedAt": "2026-09-19T20:49:02.596Z",
   "signing": "unsigned",
-  "sourceCommit": "98830e5dbcbd918603fc8a040705f720d5960e1c",
+  "sourceCommit": "fb144e11508d9f4c5ee092674dcae08a149e87d2",
   "platform": "win32",
   "arch": "x64",
-  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.11",
-  "publicTag": "v0.1.0-connector.11",
+  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.12",
+  "publicTag": "v0.1.0-connector.12",
   "io": {
     "version": "0.4.1",
     "archiveSha256": "d82d46485127cf470de12666ce1f732fa165aacf085c0414bcae6376a9f011d8"
   },
   "verification": {
-    "sourceTests": "244 passed; 1 existing skip",
+    "sourceTests": "245 passed; 1 existing skip",
     "packaging": "passed",
     "authenticode": "NotSigned",
-    "sourceManifestSha256": "ab71dd437553cf82c0aa65fba9f6b9c9ecaf7f42b4d4663aeae9c04946c7f13d",
+    "sourceManifestSha256": "2f3ed988128ebd659829b7a8d3e26b4513b49e48d9e3c7513ca7dc076149853b",
     "hiddenOverlay": "8/8 passed; synthetic Linux source test",
-    "hiddenShell": "9/9 passed; synthetic Linux source test",
-    "webContentsView": "12/12 passed; Linux source against deployed public website",
+    "hiddenShell": "11/11 passed; synthetic Linux source test",
+    "webContentsView": "13/13 passed; Linux source against deployed public website",
     "fullGraphicalSmoke": "failed: WebGL2 blocklisted on Linux validation host; fallback functional checks passed",
     "windowsExecution": "unverified-app-control-blocked",
     "installationLifecycle": "unverified",
@@ -31,17 +31,17 @@
   "artifacts": [
     {
       "kind": "installer",
-      "filename": "Overcharge-0.1.0-connector.11-win-x64-setup.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.11/Overcharge-0.1.0-connector.11-win-x64-setup.exe",
-      "size": 120712177,
-      "sha256": "d0064d506662ca2b8ec78d3485a73f1bed7953854ebc28185a03f59380818ee0"
+      "filename": "Overcharge-0.1.0-connector.12-win-x64-setup.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.12/Overcharge-0.1.0-connector.12-win-x64-setup.exe",
+      "size": 120711590,
+      "sha256": "b7b56a43b9cf85c4699addb3dde1f89ebf99c8d85335881d497fc5fdb2cdb172"
     },
     {
       "kind": "portable",
-      "filename": "Overcharge-0.1.0-connector.11-win-x64-portable.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.11/Overcharge-0.1.0-connector.11-win-x64-portable.exe",
-      "size": 120499619,
-      "sha256": "31fb305e25abf7da288f5fd00fdc211918a4eb7b8242af8107143daabee624d8"
+      "filename": "Overcharge-0.1.0-connector.12-win-x64-portable.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.12/Overcharge-0.1.0-connector.12-win-x64-portable.exe",
+      "size": 120499100,
+      "sha256": "eb6a1affa54c386538949715bb8e3cec0c1a805958f1cb1ba048103244cb5b10"
     }
   ]
 }
