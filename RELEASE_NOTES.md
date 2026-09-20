@@ -1,22 +1,22 @@
-# Overcharge AGENT 0.1.0-connector.12 · Public beta
+# Overcharge AGENT 0.1.0-connector.13 · Receiver recovery beta
 
-Windows x64 installer and portable EXE from the same immutable source. Includes the Figma overlay and integrated desktop follow-up; connector.10 remained a local candidate. Connector.11 was withdrawn to draft before website activation after an actual window-close test found a detached WebContents cleanup issue. Connector.12 fixes and verifies that exit path.
+Fixes a reported Windows failure where the default GSI port 47831 returned EADDRINUSE and the app remained at Receiver error.
 
-- One Astro-compatible header for native Play and sandboxed Heroes, Matches, Meta, Pros, Builds and library/settings web content.
-- PLAY OVERCHARGED waiting screen: Io explicitly waits for a new match signal. Dota launch remains an explicit user action. Positive process detection opens the waiting view without relaunching the game.
-- Fresh authenticated match phases transition into the native draft overlay and hide tabs. Show tabs / Esc restores navigation. Stale input stays labeled and does not invent a game exit.
-- Manual draft planning, item paths, local team notes and source-linked historical purchase examples. Design examples are labeled; no claim of complete live Ranked draft coverage.
-- One Io 0.4.1 renderer. Web content has no native preload or Node access. Offline and connection recovery remain available locally.
-- Same app identity and user-data directory; per-user NSIS installer without elevation, Start menu shortcut, data-preserving removal configuration. Manual updates only.
+- On an occupied default/saved port, the authenticated receiver directly binds one OS-selected free loopback port and saves it for the next restart. No process is killed and no firewall or security setting is changed. Explicit environment port overrides remain explicit; unrelated errors do not trigger fallback.
+- Connection settings shows the active port and recovery state. Choose Install / repair connection after a port change, then restart Dota yourself when convenient if it still targets the old endpoint.
+- A running Dota process no longer hides receiver failure behind a generic waiting message. Desktop ready, receiver listening, config mismatch and game-data receipt remain distinct.
+- Existing native Play, Figma overlay, shared web tabs, user records, Io 0.4.1 and manual update behavior are preserved.
 
-## Verification and limitations
+## Verification
 
-Both files are **unsigned**, Authenticode **NotSigned**. Byte sizes, SHA-256 and private source commit are recorded in release.json and SHA256SUMS. Public tag history is distinct from private source history.
+Source 95ff673ca918a4d9be8b0f6fd8e83e32db0f45a1; 114 JavaScript syntax checks, 250 tests passed / 1 existing skip, scene/tuning checks; release tooling 15/15. Five recovery regressions passed on native Windows and Linux. A separate native Windows source run reproduced actual 47831 failure, recovered to 58311, accepted authenticated synthetic HERO_SELECTION with HTTP 200, then restarted on 58311. This is not a live-game claim.
 
-Source: 111 JavaScript syntax checks; 245 product tests passed (1 existing skip); scene/tuning checks; 15 release tests passed. Web integration: 355 tests passed (1 existing skip), Astro check and full production build. Browser inspection covered pending, synthetic match focus, stale/exit, search/profile, embedded navigation and minimum window geometry.
+Hidden Linux Electron: overlay 8/8, shell 11/11 and all functional GSI/authentication checks passed with no application errors. Strict full graphical smoke still fails the host's WebGL2 blocklist. No graphics/security bypass was used.
 
-Hidden Linux Electron source checks: overlay 8/8, integrated shell 11/11, deployed WebContentsView 13/13 (including denied-network recovery). Synthetic authenticated GSI, capture and lifecycle checks passed. **The strict full graphical smoke did not pass because this host blocklists WebGL2.** Functional fallback receipts do not certify GPU rendering in the Windows package.
+The actual Windows portable launched in isolated hidden smoke mode using its packaged-default entry. All functional opening, IPC/isolation, authenticated GSI, synthetic draft/reset and layout checks passed; overlay 8/8 and shell 11/11 passed, with zero application errors. The strict graphical smoke did not pass because the renderer was in fallback. This does not certify visible GPU rendering or a real game.
 
-**Windows execution testing remains incomplete.** App Control blocked an unsigned executable on the validation PC; publishing with this limitation was explicitly authorized. The final Windows EXEs have not completed installation/reinstallation/update/removal, visible runtime, real Dota or Bot Pick tests. Do not disable security protections. SmartScreen or other policies may warn or prevent execution.
+## Installation and limits
 
-Download the setup EXE for normal installation or the portable EXE for installation-free use. Updates are manual via [the download page](https://overcharge.io/download/). Existing connector.9 remains available under its original versioned release.
+Both Windows x64 EXEs are unsigned (NotSigned). Same current-user installer, app identity and user data; updates are manual. Full install/reinstall/update/removal, real Dota/Bot Pick and complete Ranked draft coverage remain unverified. Do not disable device security protections. Old versioned assets are retained; checksums and source mapping are in release.json and SHA256SUMS.
+
+Normal Windows portable launch also recovered the unavailable default port and listened on its saved new endpoint. The existing app-owned Dota config was repaired and independently checked as ready, with a private local backup. Dota was not restarted or launched by this repair; live-game receipt is still unverified.

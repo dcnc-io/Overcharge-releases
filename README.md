@@ -6,14 +6,15 @@ This repository contains release metadata, documentation and downloadable binari
 
 ## Current beta
 
-**0.1.0-connector.12 · Windows x64 · Unsigned**
+**0.1.0-connector.13 · Windows x64 · Unsigned**
 
 - Installer: installs for the current Windows user and creates a Start menu shortcut.
 - Portable: runs without installation.
 - Play hosts the local connection, waiting screen and draft overlay. Heroes, Builds, Matches, Meta and Pros open the live website inside a shared desktop header. A fresh match signal hides the tabs; Show tabs restores navigation.
+- Occupied receiver ports recover automatically to a saved free local port. Use Install / repair connection afterward, and restart Dota yourself when convenient.
 - Updates are manual through the download page.
 
-**Execution testing is incomplete.** Windows App Control blocked the unsigned executable on our validation machine. Source tests, package construction and Authenticode/hash inspection passed; this build's Windows execution, install/upgrade/uninstall lifecycle and live-game reception are unverified. Do not disable your device's security protections. Unknown-publisher warnings and policy-based blocks may occur.
+**Execution testing is incomplete.** Windows receiver tests reproduced an unavailable port, recovered to a free loopback port, accepted authenticated synthetic data and reused the saved port after restart. Full installation/upgrade/uninstall and live-game reception remain unverified; release notes distinguish source and packaged runtime evidence. Do not disable your device's security protections. Unknown-publisher warnings and policy-based blocks may occur.
 
 See [Windows guide](WINDOWS_GUIDE.md), [future signing procedure](SIGNING.md), the [release manifest](release.json), and each release's SHA256SUMS.
 
