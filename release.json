@@ -1,51 +1,50 @@
 {
   "schemaVersion": 1,
   "status": "available",
-  "version": "0.1.0-connector.15",
+  "version": "0.1.0-connector.20",
   "channel": "beta",
-  "publishedAt": "2026-09-20T08:03:46.383526Z",
+  "publishedAt": "2026-09-20T11:44:24.926873Z",
   "signing": "unsigned",
-  "sourceCommit": "ba973439f81f2d34eb24b9eee8fd21967e24697e",
+  "sourceCommit": "486b7a4e981c0dd8f9f89c7ad82f775078f12cd5",
   "platform": "win32",
   "arch": "x64",
-  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.15",
-  "publicTag": "v0.1.0-connector.15",
+  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.20",
+  "publicTag": "v0.1.0-connector.20",
   "io": {
     "version": "0.4.1",
     "archiveSha256": "d82d46485127cf470de12666ce1f732fa165aacf085c0414bcae6376a9f011d8"
   },
   "verification": {
-    "sourceTests": "254 passed; 1 existing skip",
-    "packaging": "passed",
-    "authenticode": "NotSigned",
-    "sourceManifestSha256": "0ff391a4e15a4e9a691fc4b85fd786c20809476b7bc43725df1529f1cff5f3f2",
-    "windowsReceiverRecovery": "passed: actual default-port conflict, OS-selected loopback fallback, authenticated synthetic receipt and saved-port reuse after restart",
-    "windowsRegressionTests": "5/5 passed",
-    "hiddenOverlay": "8/8 passed on final Windows portable",
-    "hiddenShell": "16/16 passed on final portable, including real image decode, image identity across 20 updates and roster bounds",
-    "windowsExecution": "Final unsigned portable executed on Windows; isolated packaged smoke passed with zero errors",
-    "fullGraphicalSmoke": "passed on final Windows portable: WebGL2 ready, intro completed, core-Tether rendering and movement",
+    "sourceTests": "269 passed; 1 existing skip; source check, scene checks and 324 tuning cases passed",
+    "webTests": "78 Steam/account/match/download tests passed; web check/build passed",
+    "packaging": "Windows x64 portable and per-user NSIS built with electron-builder 26.15.3 and Electron 44.3.0; exact staged runtime closure verified",
+    "authenticode": "NotSigned for both EXEs",
+    "sourceManifestSha256": "36196b565824072b98009d366edd521c8358ad3b07e3e818d203879e570d1afe",
     "installationLifecycle": "unverified",
-    "liveGame": "User screenshots of connector.14 show local Slardar and Zeus receipt. Other-player picks remain unresolved; no current selection capture located. connector.15 does not claim an ally-pick fix.",
-    "releaseDecision": "User requested recovery revision and deployment; unsigned beta execution and live-game limits disclosed",
-    "connectionSetup": "Existing app-owned config and saved receiver port preserved; no autonomous game launch or Steam option changes",
-    "realAssets": "536 unique images decoded in Windows source consumer probe; 542 mappings match website catalog ID/key/SHA-256",
-    "intermediateSmoke": "Unpacked smoke during concurrent compression failed matchFocus and staleRetained; image and layout checks passed. Final portable smoke after build passed. Background status timing interference is suspected, not confirmed."
+    "liveGame": "Final connector20 live Bot/Turbo/Ranked full draft recognition is unverified. Prior user receipts and offline screenshots are not final live acceptance.",
+    "recognition": "Connector19 Windows packaged offline replay: ten of ten visible heroes, same results across roster transitions; identical recognition files retained in connector20",
+    "benchmark": "Offline same-Windows-process: full matcher 209-272ms to 57-60ms per ten-slot frame without reuse; unchanged portraits 10-13ms. Not live end-to-end latency.",
+    "captureScope": "Native stream targets the Dota window; processing canvas crops top 1440x128. No audio, frame saving or frame upload.",
+    "hiddenSmoke": "Final connector20 Windows portable executed: WebGL2, preload/IPC/isolation, synthetic GSI, capture redaction, layout and overlay 8/8 passed. Shell 14/16 passed; matchFocus and staleRetained failed (same two known connector19 failures); overall smoke failed with one error. Initial unpacked launch during build returned spawn UNKNOWN.",
+    "steamAuth": "Bounded same-session navigation and cancellation tests passed. Production probe reached /openid/loginform/ and secure browser-bound cookie before final route fix. Real login retry rejected by automatic approval policy; actual account completion and private match history unverified.",
+    "publicWeb": "Signed-out Matches desktop/mobile login control present; 390px viewport has no horizontal overflow.",
+    "releaseDecision": "User explicitly authorized production unsigned beta with incomplete execution verification disclosed; no security protections changed.",
+    "windowsExecution": "Final unsigned portable executed in an isolated hidden Windows test profile. Installation and visible user lifecycle remain unverified."
   },
   "artifacts": [
     {
       "kind": "installer",
-      "filename": "Overcharge-0.1.0-connector.15-win-x64-setup.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.15/Overcharge-0.1.0-connector.15-win-x64-setup.exe",
-      "size": 120712373,
-      "sha256": "4cbc459684eaae2b8f6610e62987c515d1cfbed43f043f3621f039a2fbe4f84c"
+      "filename": "Overcharge-0.1.0-connector.20-win-x64-setup.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.20/Overcharge-0.1.0-connector.20-win-x64-setup.exe",
+      "size": 129706797,
+      "sha256": "2ae6b61514821e4e38e9afd862c1ae900625f11b0e7d971ace29c285b685a6ca"
     },
     {
       "kind": "portable",
-      "filename": "Overcharge-0.1.0-connector.15-win-x64-portable.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.15/Overcharge-0.1.0-connector.15-win-x64-portable.exe",
-      "size": 120499876,
-      "sha256": "56e9e06ec10f24234e77a44c65cec1519bc07420dd5c6a2e908228e7f557bf70"
+      "filename": "Overcharge-0.1.0-connector.20-win-x64-portable.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.20/Overcharge-0.1.0-connector.20-win-x64-portable.exe",
+      "size": 129494310,
+      "sha256": "6da3edb09f75048be314ac978c731b1d8038d10a61270e6420ae6894e328ae71"
     }
   ]
 }

@@ -1,24 +1,11 @@
 # Overcharge AGENT · Windows beta
 
-Download from [overcharge.io/download](https://overcharge.io/download/), or choose a version under [Releases](https://github.com/dcnc-io/Overcharge-releases/releases).
+Download the **0.1.0-connector.20** installer or portable from [overcharge.io/download](https://overcharge.io/download/). Windows x64; unsigned; manual updates. This public repository contains binaries, release metadata and documentation. Product source remains private.
 
-This repository contains release metadata, documentation and downloadable binaries. Product source repositories remain private.
+Play hosts the local connection and draft workspace. Research and Matches use sandboxed web tabs. Connector.20 repairs blocked Steam sign-in navigation in the existing web session. Local GSI does not require a Steam web account.
 
-## Current beta
+Dota-window portrait recognition starts automatically on Dota detection. Stable visible estimates persist through incomplete GSI updates; capture stops after all ten distinct picks are recognized. Official portrait references, Drow/Lich crop fixes, precomputed descriptors and one top-strip canvas read reduce recognition work. This is screen estimation, not proof of hidden or confirmed draft picks.
 
-**0.1.0-connector.14 · Windows x64 · Unsigned**
+**Verification is incomplete.** Source tests and Windows offline-frame recognition passed. Hidden shell checks have known failures; full installation/upgrade/removal, final live-game acceptance and real Steam account sign-in are unverified. Read the [release notes](RELEASE_NOTES.md) and [release manifest](release.json) for exact evidence. Keep Windows security protections enabled; unsigned applications can be blocked by device policy.
 
-- Installer: installs for the current Windows user and creates a Start menu shortcut.
-- Portable: runs without installation.
-- Play hosts the local connection, waiting screen and draft overlay. Heroes, Builds, Matches, Meta and Pros open the live website inside a shared desktop header. A fresh match signal hides the tabs; Show tabs restores navigation.
-- Occupied receiver ports recover automatically to a saved free local port. Use Install / repair connection afterward, and restart Dota yourself when convenient.
-- Received local heroes appear as You even without team draft slots. Io startup and obsolete landing effects are repaired.
-- Updates are manual through the download page.
-
-**Verification has limits.** Windows source checks passed real WebGL, completed Io introduction, receiver recovery and authenticated synthetic hero display. Full installation/upgrade/uninstall and live-game reception remain unverified; release notes distinguish source and packaged runtime evidence. Do not disable your device's security protections. Unknown-publisher warnings and policy-based blocks may occur.
-
-See [Windows guide](WINDOWS_GUIDE.md), [future signing procedure](SIGNING.md), the [release manifest](release.json), and each release's SHA256SUMS.
-
-The public release tag identifies this metadata repository. `release.json.sourceCommit` identifies the private Agent source used for the binaries. The two repositories have distinct Git histories.
-
-Independent companion. Not affiliated with Valve.
+See the [Windows guide](WINDOWS_GUIDE.md), [future signing procedure](SIGNING.md), and release SHA256SUMS. The public tag identifies this metadata repository; release.json.sourceCommit identifies the private source used for the binaries. Independent companion, not affiliated with Valve.

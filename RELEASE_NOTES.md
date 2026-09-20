@@ -1,11 +1,29 @@
-# Overcharge AGENT connector.15 — real artwork and stable overlay
+# Overcharge 0.1.0-connector.20 · 공개 베타
 
-Hero and item images now use the verified real asset catalog shared with the website, rather than crops of design illustrations. Unchanged image elements survive incoming GSI updates, and ally/opponent rows stay above the item route panel. Unknown roles no longer display inferred role icons.
+## 변경 사항
 
-The source Windows probe decoded all 536 unique catalog images. All 542 mapped hero/item entries matched the web catalog ID, key and SHA-256. Final executable validation is recorded in release.json.
+- Electron Matches의 Steam 로그인 시작 및 리디렉션이 막히던 탐색 제한을 수정했습니다. 동일한 격리 웹 탭·영속 세션을 사용하며 서버의 OpenID 검증은 유지합니다. 실제 계정 로그인 완료는 아직 검증하지 못했습니다.
+- Dota 감지 시 내부 화면 인식을 자동 시작하고, 안정된 추정을 유지하며 열 영웅 인식이 끝나면 캡처를 종료합니다. 별도 미리보기 조작이 필요하지 않습니다.
+- Drow/Lich 픽 화면 크롭을 수정하고 공식 영웅 초상화에서 미리 계산한 특징값을 사용합니다.
+- 분석용 영역을 상단 1440×128로 줄이고 열 슬롯을 한 번에 읽습니다. 정확히 동일한 영역의 매칭 결과를 재사용하되 서로 다른 세 프레임의 확인은 유지합니다. 네이티브 스트림 자체는 Dota 창을 받습니다.
+- 수신 포트 복구, 내 영웅 표시, 실제 영웅/아이템 이미지, 로컬 Play 및 웹 탐색 기능을 포함합니다. 기존 버전 파일은 덮어쓰지 않습니다.
 
-Local Slardar and Zeus recognition was reported in actual user screenshots. Other-player pick recognition remains unresolved: the current capture has not yet been located, and old menu-only data cannot establish what the game supplies during selection. Synthetic observer/team fixtures are not proof of actual player-mode team coverage. No hidden picks are inferred. This release does not claim that missing ally picks are fixed.
+## 검증 결과와 한계
 
-Unsigned Windows x64 beta; manual updates; same app ID and data path. Full installer update/removal lifecycle remains unverified. Security settings, Steam launch options and the active game are unchanged.
+- 소스: 269개 통과, 기존 제외 1개. 소스 검사·장면 검사·324개 튜닝 검사 통과.
+- 웹: 인증·계정·경기·다운로드 관련 78개 검사 및 Astro check/build 통과. 비로그인 Matches 데스크톱·390px 모바일 로그인 버튼 및 가로 넘침 없음 확인.
+- 오프라인 Windows 인식: connector19 최종 패키지에서 저장된 실제 화면의 열 슬롯 인식과 다른 라인업 전환 결과 일치 확인. connector20은 같은 인식 파일을 유지합니다. 이것은 최종 connector20 실게임 검증이 아닙니다.
+- 같은 Windows 프로세스 오프라인 비교: 열 슬롯 분석 209–272ms → 57–60ms(재사용 미사용), 동일 초상화 재사용 시 10–13ms. 실시간 전체 지연 시간을 뜻하지 않습니다.
+- connector19 숨김 패키지 검사에서 matchFocus와 staleRetained 두 항목 실패. connector20 압축 중 숨김 unpacked 실행은 spawn UNKNOWN으로 시작 실패했습니다. 최종 connector20 포터블은 실제 실행됐으며 WebGL2·preload/IPC 격리·합성 GSI·redaction·레이아웃·오버레이 8/8 검사 통과, shell 14/16 통과입니다. 같은 matchFocus·staleRetained 실패가 재현되어 전체 smoke는 실패로 기록합니다.
+- 전체 설치·재설치·업데이트·제거·기록 보존의 실제 Windows 수명주기, connector20 실게임 전체 드래프트 및 모든 해상도·스킨은 미검증입니다.
+- Steam 운영 진단은 브라우저에 묶인 보안 쿠키와 loginform 리디렉션까지 관측했습니다. 최종 경로 수정 뒤 실제 로그인 진단 재실행은 자동 승인 검토가 구체적 사유 없이 차단했습니다. 우회하지 않았으며, 실제 계정 로그인·인증 후 경기 기록 조회는 미검증입니다.
 
-Final unsigned portable passed hidden Windows WebGL2/GSI smoke with zero errors, overlay 8/8 and shell 16/16. An earlier unpacked run during compression failed two shell transition checks; retained in release.json as an unresolved test-timing limitation.
+## 다운로드와 실행
+
+Windows x64 설치형은 현재 사용자 설치·시작 메뉴 바로가기·관리자 권한 불필요로 구성했습니다. 포터블은 설치 없이 실행합니다. **두 EXE 모두 Authenticode NotSigned**입니다. Windows 또는 조직 정책이 실행을 막을 수 있으며 보안 기능을 끄지 마세요.
+
+[다운로드](https://overcharge.io/download/) → Agent 실행 → Connection의 Install / repair connection → 준비되면 Launch Dota 2를 직접 선택합니다. Steam 웹 로그인은 로컬 게임 연결과 별개입니다. 업데이트는 Agent를 닫고 새 EXE를 받는 수동 방식입니다. 기록 보존 설정은 유지했습니다.
+
+파일 크기·SHA-256·소스 커밋·Io 해시는 release.json 및 SHA256SUMS를 확인하세요. 소스와 개인 캡처는 이 공개 저장소에 포함하지 않습니다. 공개 태그는 이 배포 저장소의 커밋이며 비공개 소스 커밋과의 대응은 manifest에 있습니다.
+
+향후 서명 전환: 발급 자격 확인 → 인증서/서비스 준비 → 앱·설치기 서명과 타임스탬프 → 서명 검증 → 새 버전·체크섬 게시. 가입·결제는 이번 범위에 없으며 서명 후 SmartScreen 경고 해소를 보장하지 않습니다.
