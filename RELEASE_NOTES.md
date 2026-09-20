@@ -1,22 +1,17 @@
-# Overcharge AGENT 0.1.0-connector.13 · Receiver recovery beta
+# Overcharge AGENT 0.1.0-connector.14 · Io and local hero repair beta
 
-Fixes a reported Windows failure where the default GSI port 47831 returned EADDRINUSE and the app remained at Receiver error.
+Fixes the held Io introduction, the old landing electrical rectangle in integrated Play, and missing display of a received local hero when no team draft slots are supplied.
 
-- On an occupied default/saved port, the authenticated receiver directly binds one OS-selected free loopback port and saves it for the next restart. No process is killed and no firewall or security setting is changed. Explicit environment port overrides remain explicit; unrelated errors do not trigger fallback.
-- Connection settings shows the active port and recovery state. Choose Install / repair connection after a port change, then restart Dota yourself when convenient if it still targets the old endpoint.
-- A running Dota process no longer hides receiver failure behind a generic waiting message. Desktop ready, receiver listening, config mismatch and game-data receipt remain distinct.
-- Existing native Play, Figma overlay, shared web tabs, user records, Io 0.4.1 and manual update behavior are preserved.
+- Desktop Io keeps progressive first rendering but allows a bounded 45-second cold shader startup. The former 8-second cutoff interrupted 14/16 ready programs on the tested Windows GPU. Io 0.4.1 and full authored rendering remain unchanged.
+- Legacy landing surfaces and their anchors are disabled in integrated Play and native research. Hiding and restoring the window cannot bring them back.
+- A received local hero appears as **You**, even when Dota supplies no team lineup. It is counted once and selected for same-hero item comparison. Unseen teammates, enemy picks and exact team slots are never fabricated.
+- An authenticated heartbeat without hero or match fields is labeled connected without match data. It is not proof of draft recognition.
+- The connector.13 receiver fix is retained: a busy default/saved port recovers once to an OS-selected loopback port and saves it. Repair the connection file after a port change; Dota restart remains user-controlled.
 
-## Verification
+## Verification and limits
 
-Source 95ff673ca918a4d9be8b0f6fd8e83e32db0f45a1; 114 JavaScript syntax checks, 250 tests passed / 1 existing skip, scene/tuning checks; release tooling 15/15. Five recovery regressions passed on native Windows and Linux. A separate native Windows source run reproduced actual 47831 failure, recovered to 58311, accepted authenticated synthetic HERO_SELECTION with HTTP 200, then restarted on 58311. This is not a live-game claim.
+Private source: 45744400dea408222d647acfb4245a93ad02d606. Syntax114; source253 passed,1 existing skip; scene/tuning checks; release tooling15/15. An isolated Windows source probe passed real WebGL startup, completed intro, core-Tether movement, authenticated synthetic GSI, overlay8/8 and shell13/13 including Phantom Lancer display and retired landing surfaces. The final connector.14 portable also passed the complete Windows packaged smoke with zero errors: real WebGL2, completed intro, core-Tether rendering, overlay8/8 and shell13/13. This is synthetic input, not a live bot-game acceptance test.
 
-Hidden Linux Electron: overlay 8/8, shell 11/11 and all functional GSI/authentication checks passed with no application errors. Strict full graphical smoke still fails the host's WebGL2 blocklist. No graphics/security bypass was used.
+Actual connector.13 accepted authenticated traffic from a user-started bot game, but live Phantom Lancer recognition failed in the old UI. A subsequent seven-packet private capture occurred after return to the main menu and had no hero/map fields; it cannot prove the bot game's payload or validate the correction. Synthetic14 tests do not certify real Bot Pick or complete Ranked pick/ban coverage.
 
-The actual Windows portable launched in isolated hidden smoke mode using its packaged-default entry. All functional opening, IPC/isolation, authenticated GSI, synthetic draft/reset and layout checks passed; overlay 8/8 and shell 11/11 passed, with zero application errors. The strict graphical smoke did not pass because the renderer was in fallback. This does not certify visible GPU rendering or a real game.
-
-## Installation and limits
-
-Both Windows x64 EXEs are unsigned (NotSigned). Same current-user installer, app identity and user data; updates are manual. Full install/reinstall/update/removal, real Dota/Bot Pick and complete Ranked draft coverage remain unverified. Do not disable device security protections. Old versioned assets are retained; checksums and source mapping are in release.json and SHA256SUMS.
-
-Normal Windows portable launch also recovered the unavailable default port and listened on its saved new endpoint. The existing app-owned Dota config was repaired and independently checked as ready, with a private local backup. Dota was not restarted or launched by this repair; live-game receipt is still unverified.
+Both Windows x64 executables are unsigned (NotSigned), with the same current-user installer identity and preserved data path. Full installation/update/removal and real-game correction verification remain incomplete unless explicitly recorded in the manifest. Do not disable security protections. Updates are manual. Prior versioned assets are retained; source mapping, sizes and SHA-256 are in release.json and SHA256SUMS. Private game captures are never published.
