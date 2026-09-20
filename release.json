@@ -1,49 +1,51 @@
 {
   "schemaVersion": 1,
   "status": "available",
-  "version": "0.1.0-connector.14",
+  "version": "0.1.0-connector.15",
   "channel": "beta",
-  "publishedAt": "2026-09-20T07:07:13.189628Z",
+  "publishedAt": "2026-09-20T08:03:46.383526Z",
   "signing": "unsigned",
-  "sourceCommit": "45744400dea408222d647acfb4245a93ad02d606",
+  "sourceCommit": "ba973439f81f2d34eb24b9eee8fd21967e24697e",
   "platform": "win32",
   "arch": "x64",
-  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.14",
-  "publicTag": "v0.1.0-connector.14",
+  "releaseUrl": "https://github.com/dcnc-io/Overcharge-releases/releases/tag/v0.1.0-connector.15",
+  "publicTag": "v0.1.0-connector.15",
   "io": {
     "version": "0.4.1",
     "archiveSha256": "d82d46485127cf470de12666ce1f732fa165aacf085c0414bcae6376a9f011d8"
   },
   "verification": {
-    "sourceTests": "253 passed; 1 existing skip; release tooling 15/15",
+    "sourceTests": "254 passed; 1 existing skip",
     "packaging": "passed",
     "authenticode": "NotSigned",
-    "sourceManifestSha256": "4dd7121192ad115e92ba1a1d22301453f430d887cdb7961f3f64fc123a32877d",
+    "sourceManifestSha256": "0ff391a4e15a4e9a691fc4b85fd786c20809476b7bc43725df1529f1cff5f3f2",
     "windowsReceiverRecovery": "passed: actual default-port conflict, OS-selected loopback fallback, authenticated synthetic receipt and saved-port reuse after restart",
     "windowsRegressionTests": "5/5 passed",
     "hiddenOverlay": "8/8 passed on final Windows portable",
-    "hiddenShell": "13/13 passed on final Windows portable, including local Phantom Lancer and no legacy surfaces",
+    "hiddenShell": "16/16 passed on final portable, including real image decode, image identity across 20 updates and roster bounds",
     "windowsExecution": "Final unsigned portable executed on Windows; isolated packaged smoke passed with zero errors",
     "fullGraphicalSmoke": "passed on final Windows portable: WebGL2 ready, intro completed, core-Tether rendering and movement",
     "installationLifecycle": "unverified",
-    "liveGame": "connector.13 received authenticated traffic, but bot Phantom Lancer display failed. connector.14 correction tested with synthetic data only; real bot pick and full Ranked coverage remain unverified",
+    "liveGame": "User screenshots of connector.14 show local Slardar and Zeus receipt. Other-player picks remain unresolved; no current selection capture located. connector.15 does not claim an ally-pick fix.",
     "releaseDecision": "User requested recovery revision and deployment; unsigned beta execution and live-game limits disclosed",
-    "connectionSetup": "Existing app-owned config and saved receiver port preserved; no autonomous game launch or Steam option changes"
+    "connectionSetup": "Existing app-owned config and saved receiver port preserved; no autonomous game launch or Steam option changes",
+    "realAssets": "536 unique images decoded in Windows source consumer probe; 542 mappings match website catalog ID/key/SHA-256",
+    "intermediateSmoke": "Unpacked smoke during concurrent compression failed matchFocus and staleRetained; image and layout checks passed. Final portable smoke after build passed. Background status timing interference is suspected, not confirmed."
   },
   "artifacts": [
     {
       "kind": "installer",
-      "filename": "Overcharge-0.1.0-connector.14-win-x64-setup.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.14/Overcharge-0.1.0-connector.14-win-x64-setup.exe",
-      "size": 120712602,
-      "sha256": "aa96d0c221df482d51485a6f9a29c152369e0564ed683804302a78c0ffaf1cb6"
+      "filename": "Overcharge-0.1.0-connector.15-win-x64-setup.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.15/Overcharge-0.1.0-connector.15-win-x64-setup.exe",
+      "size": 120712373,
+      "sha256": "4cbc459684eaae2b8f6610e62987c515d1cfbed43f043f3621f039a2fbe4f84c"
     },
     {
       "kind": "portable",
-      "filename": "Overcharge-0.1.0-connector.14-win-x64-portable.exe",
-      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.14/Overcharge-0.1.0-connector.14-win-x64-portable.exe",
-      "size": 120500108,
-      "sha256": "ae1b01ccefad119fcb2a0fcb6e71c91049badb24d88aef1bb1fa1241164e5e6b"
+      "filename": "Overcharge-0.1.0-connector.15-win-x64-portable.exe",
+      "url": "https://github.com/dcnc-io/Overcharge-releases/releases/download/v0.1.0-connector.15/Overcharge-0.1.0-connector.15-win-x64-portable.exe",
+      "size": 120499876,
+      "sha256": "56e9e06ec10f24234e77a44c65cec1519bc07420dd5c6a2e908228e7f557bf70"
     }
   ]
 }
